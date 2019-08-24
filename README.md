@@ -1,1 +1,1 @@
-# sample-springboot-app
+# spring-rest-sample
