@@ -21,5 +21,5 @@
 3. Run `minikube config set vm-driver virtualbox`.
 4. Run `kubectl config use-context minikube`.
 5. Run `kubectl cluster-info`. Make sure Kubernetes master is running at https://192.168.99.100:8443 . Checkout the url http://127.0.0.1:50413/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default 
-6. Create deployment `kubectl run sample-springboot-app-running --image=sample-springboot-app-image:latest --port=8080 --image-pull-policy Never`. Then check using `kubectl get deployments` >> shows `sample-springboot-app-running` running. Also, check through `kubectl get pods`. Check logs using `kubectl logs sample-springboot-app-running-6f44b5b74b-5dlzw`.
+6. Create deployment `kubectl run sample-springboot-app-dep1 --image=sample-springboot-app-image:latest --port 8081 --image-pull-policy Never`. Then check using `kubectl get deployments` >> shows `sample-springboot-app-running` running. Also, check through `kubectl get pods`. Check logs using `kubectl logs sample-springboot-app-running-6f44b5b74b-5dlzw`.
 
