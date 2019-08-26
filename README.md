@@ -1,4 +1,4 @@
-# sample-springboot-app 
+# Setting up sample-springboot-app 
 
 1. Install the repo on your local by: git clone https://github.com/indervirbanipal/sample-springboot-app.git
 2. Import the project in Intellij as a gradle project. 
@@ -13,4 +13,12 @@
 11. Use `docker image rm <image-id>` to remove the docker image from your local (see image-id from `docker images`).
 12. Use `sh dockerPull.sh` to pull the image from the repository you want from.
 13. See the image pulled from repo using `docker images`.
+
+# Setting up deployment (Kubernetes + Helm)
+
+1. Install the required tools using `brew install kubectl`, `brew cask install minikube`, `brew cask install virtualbox`.
+2. Run `minikube start`.
+3. Run `minikube config set vm-driver virtualbox`.
+4. Run `kubectl config use-context minikube`.
+5. Run `kubectl cluster-info`. Make sure Kubernetes master is running at https://192.168.99.100:8443 . Checkout the url http://127.0.0.1:50413/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default 
 
