@@ -22,8 +22,9 @@
 4. Run `kubectl config use-context minikube`.
 5. Run `kubectl cluster-info`. Make sure Kubernetes master is running at https://192.168.99.100:8443 . Checkout the url http://127.0.0.1:50413/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default 
 6. Push the image to minikube using `docker save sample-springboot-app-image:latest | (eval $(minikube docker-env) && docker load)`
-7. Create deployment `kubectl run sample-springboot-app-dep1 --image=sample-springboot-app-image:latest --port 8081 --image-pull-policy=IfNotPresent`. Then check using `kubectl get deployments` >> shows `sample-springboot-app-dep1` running. 
+7. Create deployment `kubectl run sample-springboot-app-dep1 --image=sample-springboot-app-image:latest --image-pull-policy=IfNotPresent`. Then check using `kubectl get deployments` >> shows `sample-springboot-app-dep1` running. 
 8. Also, check through `kubectl get pods`. Check logs using `kubectl logs <pod name>` or just do `kubectl get all` or `kubectl get all -o wide`.
-9. Expose the deployment as a service through `kubectl expose deployment sample-springboot-app-dep1 --type=NodePort --name=sample-springboot-app-serv1`. `service/sample-springboot-app-serv1` gets exposed.
+9. Expose the deployment as a service through `kubectl expose deployment sample-springboot-app-dep1 --port=8080 --type=LoadBalancer --name=sample-springboot-app-serv1`. `service/sample-springboot-app-serv1` gets exposed.
 10. `kubectl get services` should show `sample-springboot-app-serv1` running.
-
+11. Do minikube ip to check the IP and lets say you get 192.168.99.105. So, hit the url 192.168.99.105:30658
+ where 30658 is listed alongwith 8080 under `kubectl get services` for the current service.
