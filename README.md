@@ -28,3 +28,7 @@
 10. `kubectl get services` should show `sample-springboot-app-serv1` running.
 11. Do minikube ip to check the IP and lets say you get 192.168.99.105. So, hit the url 192.168.99.105:30658
  where 30658 is listed alongwith 8080 under `kubectl get services` for the current service.
+12. Better way of managing distributed deployments - Helm! Install helm using `brew install kubernetes-helm`. Use `kubectl config current-context` to check if the current context is `helm`. Install tiller using `helm init --history-max 200`.
+13. After tiller install, it can be verified by `kubectl get pods --namespace kube-system | grep tiller`.
+14. Check the versions for the helm client and server using `helm version`.
+
