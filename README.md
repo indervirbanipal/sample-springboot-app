@@ -32,3 +32,7 @@
 13. After tiller install, it can be verified by `kubectl get pods --namespace kube-system | grep tiller`.
 14. Check the versions for the helm client and server using `helm version`.
 
+# Setting up and configuring database using Helm
+
+1. Use `helm install --name postgres1 stable/postgresql` to install local postgres pods. You can verify if they are in the same namespace as the spring boot app using `kubectl get pods --namespace default`.
+
