@@ -24,5 +24,5 @@
 6. Push the image to minikube using `docker save sample-springboot-app-image:latest | (eval $(minikube docker-env) && docker load)`
 7. Create deployment `kubectl run sample-springboot-app-dep1 --image=sample-springboot-app-image:latest --port 8081 --image-pull-policy=IfNotPresent`. Then check using `kubectl get deployments` >> shows `sample-springboot-app-dep1` running. 
 8. Also, check through `kubectl get pods`. Check logs using `kubectl logs <pod name>` or just do `kubectl get all` or `kubectl get all -o wide`.
-9. Expose the deployment through `kubectl expose deployment sample-springboot-app-dep1 --type=NodePort`.
+9. Expose the deployment as a service through `kubectl expose deployment sample-springboot-app-serv1 --type=NodePort`.
 
