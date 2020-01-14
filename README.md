@@ -1,4 +1,4 @@
-# Setting up sample-springboot-app 
+# Setting up sample-springboot-app  
 
 1. Install the repo on your local by: git clone https://github.com/indervirbanipal/sample-springboot-app.git
 2. Import the project in Intellij as a gradle project. 
